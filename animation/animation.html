@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zap — Modern Design</title>
+    <link rel="stylesheet" href="animation.css">
+    
+    <script src="libs/gsap.min.js" defer></script>
+    <script src="libs/ScrollTrigger.min.js" defer></script>
+    <script src="libs/ScrollSmoother.min.js" defer></script>
+    <script src="anim.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+
+            <!-- Шаг 1: Первая секция (Hero) -->
+            <section class="first">
+                <div class="zag_content">
+                    <h1 id="Modern">Modern Disign</h1>
+                </div>
+                <img src="img/hero.png" alt="Hero" class="hero">
+            </section>
+            <section class="second">
+                <p id="L">
+                    Modern design embraces minimalism with clean lines, ample white space, 
+                    and purposeful simplicity. Bold typography creates hierarchy while muted color palettes 
+                    establish sophistication. Responsive layouts adapt seamlessly across devices, prioritizing user experience. 
+                    Less truly becomes more as every element serves a clear function in the overall composition.
+                </p>
+                <p id="R">
+                    Contemporary design balances aesthetics with functionality through fluid typography, 
+                    dynamic gradients, and immersive micro-interactions. Organic shapes soften rigid grids while dark mode options
+                    enhance visual comfort. The focus remains on accessibility and performance, creating intuitive interfaces 
+                    that feel both familiar and refreshingly innovative.
+                </p>
+            </section>
+            <section class="portfolio-item" id="shake-section">
+                <img src="img/1.jpg" alt="SHAKE Brand Concept" class="left card-img" id="first_img">
+                
+                <div class="zag_section" id="first_img_tx">
+                    <h2>"SHAKE" Brand Concept</h2>
+                    <p>A minimalist brand identity featuring bold typographic hierarchy with "SHAKE" as the commanding focal point. The navigation menu creates clean horizontal rhythm while the repeated "ABOUT" element introduces intentional visual tension—playing with perception and duplication as a subtle conceptual gesture.</p>
+                    <p>The stark black-and-white palette allows the typography to breathe, embodying contemporary design's appreciation for restraint with a twist of conceptual wit.</p>
+                </div>
+            </section>
+            <section class="portfolio-item" id="monolith-section">
+    <img src="img/3.jfif" alt="The Monolith" class="left card-img" id="J">
+    
+    <div class="zag_section" id="J_tx">
+        <h2>The Monolith</h2>
+        <p>Minimalist residence featuring a monochromatic charcoal palette and sculptural geometric forms. Clean lines define seamless built-in elements and smooth microcement surfaces. The sophisticated interplay of light and shadow creates depth throughout open-plan living spaces. Recessed lighting and curated furnishings emphasize the serene, contemporary aesthetic of this urban sanctuary.</p>
+    </div>
+            </section>
+            <!-- 6 этап: Перевернутая карточка "John Wick" -->
+<section class="portfolio-item reverse" id="john-section">
+    <div class="zag_section" id="John_tx">
+        <h2>John Wick: The Legend Within</h2>
+        <p>This striking typographic portrait captures the essence of Keanu Reeves's iconic assassin. Fragmented text echoes Wick's fractured psyche—"Focus, commitment, and sheer will" defines his code, while "Legend," "Myth," and "Man" trace his transformation.</p>
+        <p>The Continental Hotel emerges from shadow, framing a man who exists between worlds. A visual study of discipline, mortality, and the weight of legend.</p>
+    </div>
+
+    <img src="img/2.jpg" alt="John Wick" class="right card-img" id="John">
+</section>
+
+<section class="final-section">
+    <h1 id="final-title">thank you for your attention</h1>
+</section>
+        </div>
+    </div>
+</body>
+</html>

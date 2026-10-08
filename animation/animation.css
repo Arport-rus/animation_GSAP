@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+}
+
+@font-face {
+    font-family: 'Rale';
+    src: url('fonts/raleway-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('fonts/outfit-regular.woff2') format('woff2');
+}
+
+body {
+    background-color: #181818;
+    background-image: url('img/bg.jpg');
+    background-size: 20px;
+    color: #eee7e7;
+    font-family: 'Rale', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- СЕКЦИЯ 1: Hero --- */
+.first {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 5%;
+}
+
+.zag_content {
+    z-index: 2;
+    transform: translateX(8vw);
+    font-family: 'Outfit', sans-serif;
+}
+
+.zag_content h1 {
+    font-size: calc(var(--index) * 4.8);
+    background: linear-gradient(to left, #bdc3c7, #2c3e50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero {
+    width: calc(var(--index) * 22);
+    max-width: 800px;
+    z-index: 1;
+    transform: translateX(-8vw);
+}
+
+/* --- СЕКЦИЯ 2: Текст L / R --- */
+.second {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    padding: 10% 8%;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: calc(var(--index) * 1.1);
+    line-height: 1.6;
+    color: #c2c2c2;
+}
+
+/* --- СЕКЦИЯ 3: Карточки портфолио --- */
+.portfolio-item {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    padding: 10% 8%;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+.card-img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.left {
+    box-shadow: -20px 0px 40px rgba(228, 13, 13, 0.6);
+}
+
+.right {
+    box-shadow: 20px 0px 40px rgba(228, 13, 13, 0.6);
+}
+
+.zag_section h2 {
+    font-size: calc(var(--index) * 1.5);
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #75a87e, #461db6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.zag_section p {
+    font-size: calc(var(--index) * 0.95);
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+/* --- СЕКЦИЯ 4: Финал --- */
+.final-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    font-family: 'Outfit', sans-serif;
+}
+
+.final-section h1 {
+    font-size: calc(var(--index) * 2.5);
+    background: linear-gradient(135deg, #808080 0%, #ffffff 25%, #083d83 50%, #c72121 75%, #75a87e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: chrome 7s linear infinite;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+@keyframes chrome {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+/* ==========================================
+   АДАПТИВ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА (<= 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    :root {
+        --index: calc(2vw + 2vh);
+    }
+
+    /* 1. Первая секция ровно на весь экран */
+    .first {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Занимает строго 100% высоты экрана */
+        padding: 8vh 5% 5vh 5%;
+    }
+
+    .zag_content {
+        transform: none;
+        margin-bottom: 40px; /* Увеличили отступ от заголовка до картинки */
+        text-align: center;
+    }
+
+    .zag_content h1 {
+        font-size: calc(var(--index) * 2.6);
+        line-height: 1.2;
+    }
+
+    .hero {
+        transform: none;
+        width: 80%;
+        max-width: none;
+    }
+
+    /* 2. Межблочные отступы для всех секций */
+    .second,
+    .portfolio-item {
+        grid-template-columns: 1fr;
+        min-height: 100vh; /* Каждая секция занимает свой экран */
+        padding: 20% 6%;    /* Увеличенные отступы сверху и снизу */
+        gap: 35px;         /* Увеличили разрыв между элементами */
+    }
+
+    .second p,
+    .zag_section p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .portfolio-item.reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .card-img {
+        max-height: 40vh;
+    }
+
+    .left, .right {
+        box-shadow: 0px 8px 20px rgba(228, 13, 13, 0.4);
+    }
+
+    /* 3. Финальная секция: ровно 1 надпись по центру на весь экран */
+    .final-section {
+        min-height: 100vh; /* Строго 100% высоты вьюпорта */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+        margin: 0;
+    }
+
+    .final-section h1 {
+        font-size: calc(var(--index) * 2.2);
+        line-height: 1.3;
+        text-align: center;
+    }
+}
